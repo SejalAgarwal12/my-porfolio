@@ -15,36 +15,44 @@ const MotionBox = motion(Box);
 
 const projects = [
   {
-    title: "E-commerce App",
-    description:
-      "E-Commerce App handles full-stack logic, CRUD operations, and user flows.",
-    tech: ["MongoDB", "Express", "React", "Node.js"],
-    github: "https://github.com/yourhandle/ecommerce-app",
-    demo: "https://your-ecommerce.com",
+    title: "WeCare Application",
+    description: `A web application designed to connect users with coaches/consultants. Users can browse available coaches, book, 
+      cancel, and reschedule appointments, while coaches can manage their scheduled sessions. The platform provides 
+      dedicated dashboards for both users and coaches with secure authentication and authorization, and utilizes API calls 
+      powered by JSON Server to simulate real backend interactions`,
+    tech: ["JSON-Server", , "React", "HTML", "CSS"],
+    github: "https://github.com/SejalAgarwal12/WeCare-Application.git",
+    demo: "https://github.com/SejalAgarwal12/WeCare-Application.git",
+    image: "/images/wecare.jpg",
   },
   {
     title: "Portfolio Website",
-    description:
-      "A modern, responsive portfolio built with React and Material UI.",
+    description: `A fully responsive personal portfolio built with React, Material-UI, and Framer Motion 
+      It features smooth animations, seamless navigation, and a modern UI with both light and dark themes 
+      for an enhanced user experience.`,
     tech: ["React", "MUI", "Framer Motion"],
-    github: "https://github.com/yourhandle/portfolio",
-    demo: "https://yourportfolio.com",
+    github: "https://github.com/SejalAgarwal12/my-portfolio.git",
+    demo: "https://github.com/SejalAgarwal12/my-portfolio.git",
+    image: "/images/portfolio.png",
   },
   {
     title: "Task/Management App",
     description:
       "Demonstrates state management (Redux), user interaction, and backend integration.",
     tech: ["MongoDB", "React", "Redux", "Node.js"],
-    github: "https://github.com/yourhandle/ecommerce-app",
-    demo: "https://your-ecommerce.com",
+    github: "https://github.com/SejalAgarwal12/TaskManagement-App.git",
+    demo: "https://github.com/SejalAgarwal12/TaskManagement-App.git",
+    image: "/images/task.jpeg",
   },
   {
-    title: "Another Project",
-    description:
-      "Example project to demonstrate CSS Grid layout handling variable content.",
-    tech: ["React", "Node.js", "MUI"],
-    github: "https://github.com/yourhandle/another-project",
-    demo: "https://example.com",
+    title: "BonStay Application",
+    description: `A hotel booking application that allows users to browse hotels, book and manage reservations, 
+      and explore reviews shared by other travelers. Users can also post their own reviews and feedback. 
+      The platform includes secure authentication and authorization, ensuring personalized and protected access`,
+    tech: ["React", "Node.js", "Bootstrap", "JSON-Server"],
+    github: "https://github.com/SejalAgarwal12/BonStay-Application.git",
+    demo: "https://github.com/SejalAgarwal12/BonStay-Application.git",
+    image: "/images/bonstay.png",
   },
 ];
 
@@ -106,15 +114,17 @@ export default function Projects() {
                 flexDirection: "column",
                 height: "100%", // stretch card to fill grid cell
                 p: 2,
+                maxWidth: 500,        // <-- Add this
+                mx: "auto",           // <-- Center the card in its grid cell
                 borderRadius: 3,
                 backgroundColor:
                   theme.palette.mode === "dark"
-                    ? "rgba(30, 40, 60, 0.85)"
-                    : "rgba(255, 255, 255, 0.9)",
+                    ? "transparent"
+                    : "rgba(255, 255, 255, 0.66)",
                 color: theme.palette.text.primary,
                 boxShadow:
                   theme.palette.mode === "dark"
-                    ? "0 8px 30px rgba(0,0,0,0.5)"
+                    ? "0 8px 30px rgba(0,0,0,0.4)"
                     : "0 8px 20px rgba(0,0,0,0.15)",
                 transition: "transform 0.3s, box-shadow 0.3s",
                 "&:hover": {
@@ -127,7 +137,26 @@ export default function Projects() {
               }}
             >
               <CardContent sx={{ flexGrow: 1 }}>
-                <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
+                {project.image && (
+                  <Box
+                    component="img"
+                    src={project.image}
+                    alt={project.title}
+                    sx={{
+                      width: "100%",
+                      height: 200,
+                      objectFit: "cover",
+                      borderRadius: 2,
+                      mb: 2,
+                    }}
+                  />
+                )}
+                <Typography variant="h6" sx={{ fontWeight: 800, mb: 1 ,textAlign:"center",
+                   fontFamily: "Roboto Slab",
+                  background: "linear-gradient(90deg, #dbd6ceff, #b31515ff)", // teal to coral gradient
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}>
                   {project.title}
                 </Typography>
                 <Typography variant="body2" sx={{ mb: 2 }}>
@@ -170,11 +199,12 @@ export default function Projects() {
                     target="_blank"
                     rel="noopener noreferrer"
                     sx={{
-                    background: "linear-gradient(90deg, #315e77ff, #873636ff)",
-                    color: "#fff",
-                    textTransform: "none",
-                    fontWeight: 600,
-                  }}
+                      background:
+                        "linear-gradient(90deg, #315e77ff, #873636ff)",
+                      color: "#fff",
+                      textTransform: "none",
+                      fontWeight: 600,
+                    }}
                   >
                     Demo
                   </Button>

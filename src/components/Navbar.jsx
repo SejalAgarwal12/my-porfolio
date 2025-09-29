@@ -13,6 +13,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { Link as ScrollLink } from "react-scroll";
 import { Brightness4, Brightness7, GitHub, LinkedIn } from "@mui/icons-material";
 import { useTheme } from "@mui/material/styles";
+import { LightMode, DarkMode } from "@mui/icons-material";
 
 export default function Navbar({ mode, setMode }) {
   const [open, setOpen] = useState(false);
@@ -94,7 +95,7 @@ export default function Navbar({ mode, setMode }) {
             </IconButton>
             <IconButton
               component="a"
-              href="http://linkedin.com/in/sejal-agarwal-8a101716b"
+              href="https://linkedin.com/in/sejal-agarwal-8a101716b"
               target="_blank"
               rel="noopener noreferrer"
               color="inherit"
@@ -106,7 +107,8 @@ export default function Navbar({ mode, setMode }) {
               onClick={() => setMode(mode === "light" ? "dark" : "light")}
               color="inherit"
             >
-              {mode === "light" ? <Brightness4 /> : <Brightness7 />}
+              {/* {mode === "light" ? <Brightness4 /> : <Brightness7 />} */}
+              {mode === "light" ? <DarkMode /> : <LightMode />}
             </IconButton>
           </Stack>
 

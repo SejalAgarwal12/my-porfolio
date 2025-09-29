@@ -9,7 +9,7 @@ import {
   FaCss3Alt,
   FaBootstrap,
 } from "react-icons/fa";
-import { SiMongodb, SiExpress, SiMui, SiGithub, SiPostman, SiDocker, SiFigma } from "react-icons/si";
+import { SiMongodb, SiExpress, SiMui, SiGithub, SiPostman, SiDocker, SiFigma,  } from "react-icons/si";
 
 const MotionBox = motion(Box);
 
@@ -41,11 +41,22 @@ const skillsByCategory = [
   },
 ];
 
+const CopilotIcon = () => (
+  <img
+    src="/copilot.png"   // save the official GitHub Copilot SVG in your public/ folder
+    alt="GitHub Copilot"
+    width={40}
+    height={40}
+    style={{borderRadius:"50%"}}
+  />
+)
+
 const tools = [
   { name: "Git", icon: <SiGithub size={40} /> },
   { name: "Postman", icon: <SiPostman size={40} /> },
   { name: "Docker", icon: <SiDocker size={40} /> },
   { name: "Figma", icon: <SiFigma size={40} /> },
+  { name: "GitHub Copilot", icon: <CopilotIcon /> },
 ];
 
 export default function Skills() {

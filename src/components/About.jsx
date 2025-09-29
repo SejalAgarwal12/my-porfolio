@@ -1,6 +1,9 @@
 import { Box, Typography, Button, useTheme } from "@mui/material";
 import { motion } from "framer-motion";
 
+//import CodingGif from "../assets/About.png"
+import CodingGiffy from "../assets/aboutGiffy.gif"
+
 const MotionBox = motion(Box);
 
 export default function About() {
@@ -53,7 +56,9 @@ export default function About() {
         >
           <Box
             component="img"
-            src="https://media.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif"
+            //src="https://media.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif"
+            //src = {CodingGif}
+            src = {CodingGiffy}
             alt="Coding gif"
             sx={{
               width: { xs: "80%", md: "100%" },
